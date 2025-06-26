@@ -1,0 +1,153 @@
+.header {
+  position: relative;
+  /* padding: 1rem; */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  height: 220px;
+  overflow: hidden;
+}
+
+/* Semi-transparent overlay for better text readability */
+.header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.85);
+  z-index: 1;
+}
+
+.header-overlay {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+}
+
+.logo {
+  /* height: 200px; */
+  width: 200px;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.1));
+  z-index: 2;
+  position: relative;
+  margin-top: -1rem;
+}
+
+.header-content {
+  flex: 1;
+  position: relative;
+  z-index: 2;
+}
+
+.title {
+  margin: 0;
+  font-size: 1.5rem;
+  line-height: 1.4;
+  color: black;
+}
+
+.subtitle {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.brand-text {
+  height: 100px;
+  margin-bottom: 1rem;
+}
+
+/* Highlighting styles */
+.highlight-brand {
+  background: linear-gradient(45deg, #FFD700, #FFA500);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  position: relative;
+}
+
+/* Fallback for browsers that don't support background-clip: text */
+@supports not (background-clip: text) {
+  .highlight-brand {
+    color: #FFD700;
+    background: none;
+    -webkit-text-fill-color: initial;
+  }
+}
+
+.highlight-event {
+  color: #00FF7F;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4), 0 0 10px #00FF7F;
+  }
+  to {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4), 0 0 20px #00FF7F, 0 0 30px #00FF7F;
+  }
+}
+
+@media (max-width: 599px) {
+  .logo {
+    /* height: 100px; */
+    width: 150px;
+    margin-bottom: 0.3rem;
+  }
+  
+  .title {
+    font-size: 1.3rem;
+  }
+}
+
+@media (min-width: 500px) {
+  .header {
+    flex-direction: row;
+    justify-content: flex-start;
+    text-align: left;
+    align-items: flex-start;
+    height: 150px;
+  }
+
+  .header-overlay {
+    flex-direction: row;
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .logo {
+    margin-bottom: 0;
+    margin-right: 1rem;
+  }
+
+  .brand-text {
+    margin-right: 1rem;
+    margin-bottom: 0;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .subtitle {
+    font-size: 1.2rem;
+  }
+
+  .header-content {
+    padding-top: 1rem;
+  }
+}
