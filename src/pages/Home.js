@@ -5,7 +5,7 @@ import EventForm from '../components/EventForm';
 import Footer from '../components/Footer';
 
 const Home = () => (
-  <div style={{ backgroundColor: "red",width: "100%", }}>
+  <div style={{  }}>
     <Header />
     <SplashSection />
     <EventForm />

@@ -39,14 +39,16 @@
   width: 200px;
   filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.1));
   z-index: 2;
-  position: relative;
+  /* position: relative; */
   margin-top: -1rem;
+  display: "block";padding: 0;
 }
 
 .header-content {
   flex: 1;
   position: relative;
   z-index: 2;
+  padding: 1rem;
 }
 
 .title {
@@ -54,6 +56,7 @@
   font-size: 1.5rem;
   line-height: 1.4;
   color: black;
+  text-align: center;
 }
 
 .subtitle {
@@ -68,7 +71,7 @@
 
 /* Highlighting styles */
 .highlight-brand {
-  background: linear-gradient(45deg, #FFD700, #FFA500);
+  background: linear-gradient(45deg, #000000, #000000);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
