@@ -1,23 +1,13 @@
-body {
+/* index.css */
+* {
   margin: 0;
-  font-family: 'Arial', sans-serif;
-  background-color: #fff;
-  overflow-x: hidden;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-input, button {
-  display: block;
+html, body {
   width: 100%;
-  margin: 0.5rem 0;
-  padding: 0.75rem;
-  font-size: 1rem;
-  border-radius: 8px;
-  border: 1px solid #ccc;
-}
-
-button {
-  background-color: #1E90FF;
-  color: white;
-  font-weight: bold;
-  border: none;
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }

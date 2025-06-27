@@ -354,7 +354,7 @@ const EventForm = () => {
           <FaWhatsapp />
         </a>
         <a
-          href="https://www.facebook.com/share/19E86Ckqta/?mibextid=wwXIfr"
+          href="https://www.facebook.com/profile.php?id=61568060425145"
           target="_blank"
           rel="noopener noreferrer"
           className="social-icon facebook"

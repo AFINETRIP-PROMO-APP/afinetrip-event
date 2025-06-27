@@ -4,10 +4,8 @@ import Lottie from "lottie-react";
 import "../styles/SplashScreen.css";
 import logo from "../assets/logo.png";
 import soccerAnimation from "../animations/soccerBall.json";
-import cloudAnimation from "../animations/cloudAnimation.json"; // Make sure this path is correct
-import planeAnimation from "../animations/plane.json";
+import cloudAnimation from "../animations/cloudAnimation.json"; 
 import planeAnimation2 from "../animations/whitePlane.json";
-import ballAnimation from "../animations/soccerball2.json";
 const SplashScreen = () => {
   const navigate = useNavigate();
 
