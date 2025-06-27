@@ -16,7 +16,7 @@
   justify-content: center;
   gap: 20px;
   text-align: center;
-  min-height: 150px;
+  min-height: 100px;
 }
 
 .carousel-animation-bootstrap {
@@ -43,7 +43,7 @@
 
   .carousel-animation-bootstrap {
     width: 60px;
-    height: 60px;
+    height: 40px;
   }
 
   .carousel-text-bootstrap h2 {
@@ -55,7 +55,7 @@
   }
 }
 .splash-section-bootstrap {
-  min-height: 300px;
+  min-height: 150px;
   padding: 20px;
   border-radius: 8px;
   border: 1px solid #ccc;

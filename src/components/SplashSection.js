@@ -4,7 +4,7 @@ import Lottie from "lottie-react";
 import soccerball2 from "../animations/soccerball2.json";
 import "../styles/SplashSection.css";
 
-import bg1 from "../assets/bg1.webp";
+import bg1 from "../assets/bg1.jpg";
 import bg2 from "../assets/bg2.jpg";
 import bg3 from "../assets/bg3.webp";
 
@@ -12,7 +12,7 @@ const slides = [
   {
     title: "Fan Fest 2025 - Where travel meets football",
     subtitle: "Register now and get 10% off your next AfineTrip flight",
-    background: bg1,
+    background: bg2,
     textStyle: {
   color: "#d88371",
   textShadow: "1px 1px 2px rgba(255,255,255,0.3)",
@@ -55,8 +55,8 @@ const SplashSection = () => {
       className="splash-section-bootstrap"
       style={{
         backgroundImage: `url(${slides[index].background})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
+        // backgroundSize: "cover",
+        // backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
         transition: "background-image 0.5s ease-in-out", // smooth fade transition of bg
         color: "white",
