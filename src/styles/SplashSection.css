@@ -1,0 +1,63 @@
+.splash-section-bootstrap {
+  width: 90%;
+  margin: 20px auto;
+  padding: 20px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  color: white;
+}
+
+.carousel-content-bootstrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  text-align: center;
+  min-height: 150px;
+}
+
+.carousel-animation-bootstrap {
+  width: 80px;
+  height: 80px;
+  flex-shrink: 0;
+}
+
+.carousel-text-bootstrap h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.carousel-text-bootstrap p {
+  font-size: 1rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .carousel-content-bootstrap {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .carousel-animation-bootstrap {
+    width: 60px;
+    height: 60px;
+  }
+
+  .carousel-text-bootstrap h2 {
+    font-size: 1.2rem;
+  }
+
+  .carousel-text-bootstrap p {
+    font-size: 0.95rem;
+  }
+}
+.splash-section-bootstrap {
+  min-height: 300px;
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  /* other styles */
+}

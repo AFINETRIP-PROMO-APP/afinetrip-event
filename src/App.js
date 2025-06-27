@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import SplashScreen from './components/SplashScreen';
 import Home from './pages/Home'; // Adjust path if needed
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 function App() {
   const [showSplash, setShowSplash] = useState(true);
