@@ -53,8 +53,6 @@
 
 .title {
   margin: 0;
-  font-size: 1.5rem;
-  line-height: 1.4;
   color: black;
   text-align: center;
 }
@@ -108,8 +106,7 @@
 @media (max-width: 599px) {
   .logo {
     /* height: 100px; */
-    width: 150px;
-    margin-bottom: 0.3rem;
+    width: 140px;
   }
   
   .title {

@@ -1,13 +1,41 @@
 import React from 'react';
 import logo from '../assets/logo.png';
 import '../styles/Header.css';
+import Lottie from "lottie-react";
+import backgroundAnim from '../animations/mapPlane.json'
 
 const Header = () => (
   <header className="header" style={{backgroundColor:"white",borderBottom:"1px solid #ccc"}}>
     <div className="header-overlay">
-      <div style={{display: "inline-block", padding: 0,
-    margin: 0,}}>
-      <img src={logo} alt="Logo" className="logo" />
+      <Lottie
+        animationData={backgroundAnim}
+        loop
+        autoplay
+        style={{
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          width: '100%',
+          height: '100%',
+          zIndex: 0,
+          objectFit: 'cover',
+        }}
+      />
+
+      {/* Foreground Content */}
+      <div
+        style={{
+          position: 'relative',
+          zIndex: 1,
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          height: '100%',
+          padding: 0,
+          margin: 0,
+        }}
+      >
+        <img src={logo} alt="Logo" className="logo" />
       </div>
       <div className="header-content">
         <h1 className="title">
