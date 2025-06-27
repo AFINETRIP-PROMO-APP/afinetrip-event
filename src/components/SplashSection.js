@@ -30,7 +30,7 @@ const SplashSection = () => (
       </div>
       <div style={{ }}>
     <h2>Fan Fest 2025 - Where travel meets football</h2>
-    <p>Register now and receive a 10% flight discount voucher for your next trip with AfineTrip.</p>
+    <p>Register now and receive a 10% flight discount voucher for your next trip with AfineTrip</p>
     {/* <img src="/event-banner.jpg" alt="Football Event" style={{ width: '100%', maxHeight: '400px', objectFit: 'cover' }} /> */}
      </div>
   </section>

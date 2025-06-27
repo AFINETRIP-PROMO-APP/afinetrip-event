@@ -10,7 +10,7 @@ function App() {
     return () => clearTimeout(timer);
   }, []);
 
-  return showSplash ? <SplashScreen /> : <Home />;
+  return showSplash ? <SplashScreen /> : <SplashScreen />;
 }
 
 export default App;
