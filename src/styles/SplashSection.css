@@ -1,63 +1,60 @@
-.splash-section-bootstrap {
+.small-carousel {
   width: 90%;
+  height: 120px;
   margin: 20px auto;
-  padding: 20px;
   background-size: cover;
   background-position: center;
-  background-repeat: no-repeat;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  color: white;
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 16px;
 }
 
 .carousel-content-bootstrap {
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 20px;
-  text-align: center;
-  min-height: 100px;
+  gap: 16px;
+  height: 100%;
+  width: 100%;
 }
 
 .carousel-animation-bootstrap {
-  width: 80px;
-  height: 80px;
+  width: 60px;
+  height: 60px;
   flex-shrink: 0;
 }
 
+.carousel-text-bootstrap {
+  flex-grow: 1;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
 .carousel-text-bootstrap h2 {
-  font-size: 1.5rem;
-  margin-bottom: 10px;
+  font-size: 1rem;
+  margin: 0;
+  line-height: 1.2;
 }
 
 .carousel-text-bootstrap p {
-  font-size: 1rem;
+  font-size: 0.75rem;
+  margin: 0;
 }
 
-/* Responsive */
 @media (max-width: 768px) {
-  .carousel-content-bootstrap {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .carousel-animation-bootstrap {
-    width: 60px;
-    height: 40px;
-  }
-
   .carousel-text-bootstrap h2 {
-    font-size: 1.2rem;
+    font-size: 0.9rem;
   }
 
   .carousel-text-bootstrap p {
-    font-size: 0.95rem;
+    font-size: 0.7rem;
   }
-}
-.splash-section-bootstrap {
-  min-height: 150px;
-  padding: 20px;
-  border-radius: 8px;
-  border: 1px solid #ccc;
-  /* other styles */
+
+  .carousel-animation-bootstrap {
+    width: 40px;
+    height: 40px;
+  }
 }
