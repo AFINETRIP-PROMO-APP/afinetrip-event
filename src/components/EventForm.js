@@ -32,24 +32,6 @@ const EventForm = () => {
   const [couponCode, setCouponCode] = useState("");
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const dropdownRef = useRef();
-  const [keyboardOpen, setKeyboardOpen] = useState(false);
-
-useEffect(() => {
-  const initialHeight = window.innerHeight;
-
-  function handleResize() {
-    // If the height is shrunk significantly, assume keyboard open
-    if (window.innerHeight < initialHeight - 150) {
-      setKeyboardOpen(true);
-    } else {
-      setKeyboardOpen(false);
-    }
-  }
-
-  window.addEventListener("resize", handleResize);
-  return () => window.removeEventListener("resize", handleResize);
-}, []);
-
 
   const nationalityOptions = useMemo(() => {
     return countries
@@ -317,7 +299,6 @@ useEffect(() => {
               value={phone}
               onChange={setPhone}
               inputClass="eventform-input" // keep this for base styles
-              containerClass={`phone-input-container ${keyboardOpen ? "dropdown-up" : ""}`}
               inputStyle={{
                 width: "10%",
                 height: "40px",
