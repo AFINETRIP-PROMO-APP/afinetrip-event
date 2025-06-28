@@ -4,9 +4,9 @@ import Lottie from "lottie-react";
 import soccerball2 from "../animations/soccerball2.json";
 import "../styles/SplashSection.css";
 
-import bg1 from "../assets/bg1.jpg";
-import bg2 from "../assets/bg2.jpg";
-import bg3 from "../assets/bg3.webp";
+import bg1 from "../assets/bg1.png";
+import bg2 from "../assets/bg2.png";
+import bg3 from "../assets/b3.png";
 
 const slides = [
   {
@@ -72,10 +72,7 @@ const SplashSection = () => {
           <div className="carousel-animation-bootstrap">
             <Lottie animationData={soccerball2} loop autoplay />
           </div>
-          <div className="carousel-text-bootstrap" style={slide.textStyle}>
-            <h2>{slide.title}</h2>
-            <p>{slide.subtitle}</p>
-          </div>
+         
         </div>
       </Carousel.Item>
     ))}
