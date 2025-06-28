@@ -6,6 +6,10 @@ import validator from "validator";
 import toast, { Toaster } from "react-hot-toast";
 import { FaInstagram, FaFacebookF, FaWhatsapp } from "react-icons/fa6";
 import "../styles/EventForm.css";
+import Voucher from "./Voucher";
+
+
+
 
 function countryCodeToFlagEmoji(code) {
   return code
@@ -193,38 +197,7 @@ const EventForm = () => {
     {couponCode}
   </div>
 
-  <button
-    onClick={() => {
-      const element = document.createElement("a");
-      const file = new Blob(
-        [
-          `🎉 Congratulations!\n\nHere is your 10% Voucher Code:\n\n${couponCode}\n\nUse it on your next booking with A Fine Trip!`,
-        ],
-        { type: "text/plain" }
-      );
-      element.href = URL.createObjectURL(file);
-      element.download = "afinetrip_voucher.txt";
-      document.body.appendChild(element);
-      element.click();
-      document.body.removeChild(element);
-    }}
-    style={{
-      cursor: "pointer",
-      backgroundColor: "#4caf50",
-      border: "none",
-      color: "white",
-      fontWeight: "bold",
-      padding: "12px 25px",
-      fontSize: "1.1rem",
-      borderRadius: "30px",
-      boxShadow: "0 4px 6px rgba(76,175,80,0.4)",
-      transition: "background-color 0.3s ease",
-    }}
-    onMouseOver={(e) => (e.currentTarget.style.backgroundColor = "#388e3c")}
-    onMouseOut={(e) => (e.currentTarget.style.backgroundColor = "#4caf50")}
-  >
-    Download Voucher
-  </button>
+  <Voucher couponCode={couponCode} />
 </div>
 
       ) : (
