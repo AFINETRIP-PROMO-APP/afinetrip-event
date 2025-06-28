@@ -7,6 +7,8 @@ import "../styles/SplashSection.css";
 import bg1 from "../assets/bg1.png";
 import bg2 from "../assets/bg2.png";
 import bg3 from "../assets/b3.png";
+import bg4 from "../assets/bg4.png";
+import bg5 from "../assets/bg5.png";
 
 const slides = [
   {
@@ -40,6 +42,26 @@ const slides = [
 }
 
   },
+  /* {
+    title: "Travel Like a Pro",
+    subtitle: "Custom match + travel packages for football fans",
+    background: bg4,
+   textStyle: {
+  color: "#222222",
+  fontWeight: "700",
+}
+
+  },
+  {
+    title: "Travel Like a Pro",
+    subtitle: "Custom match + travel packages for football fans",
+    background: bg5,
+   textStyle: {
+  color: "#222222",
+  fontWeight: "700",
+}
+
+  }, */
 ];
 
 

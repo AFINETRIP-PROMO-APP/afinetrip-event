@@ -11,7 +11,7 @@ const Header = () => (
       </div>
       <div className="header-content">
         <h1 className="title">
-          Join the journey with <span className="highlight-brand">AfineTrip</span> at <span className="highlight-brand">Worldcup Katowice 2025!</span>
+          Join the journey with <span className="highlight-brand">AfineTrip</span> at Worldcup Katowice 2025!
         </h1>
       </div>
     </div>
