@@ -142,12 +142,91 @@ const EventForm = () => {
           <p>Submitting your registration...</p>
         </div>
       ) : submitted ? (
-        <div className="eventform-thankyou">
-          <h3>Thank you for registering!</h3>
-          <p>
-            Your 10% voucher code is: <strong>{couponCode}</strong>
-          </p>
-        </div>
+        <div
+  className="eventform-thankyou"
+  style={{
+    maxWidth: "400px",
+    margin: "20px auto",
+    padding: "20px",
+    border: "3px dashed #4caf50",
+    borderRadius: "15px",
+    backgroundColor: "#f0fff4",
+    boxShadow: "0 4px 8px rgba(76, 175, 80, 0.2)",
+    textAlign: "center",
+    fontFamily: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif",
+  }}
+>
+  <h3
+    style={{
+      color: "#2e7d32",
+      fontWeight: "700",
+      fontSize: "1.8rem",
+      marginBottom: "10px",
+    }}
+  >
+    🎉 Thank You for Registering!
+  </h3>
+  <p
+    style={{
+      fontSize: "1.2rem",
+      marginBottom: "20px",
+      color: "#388e3c",
+    }}
+  >
+    Your 10% voucher code is:
+  </p>
+  <div
+    style={{
+      fontSize: "2rem",
+      fontWeight: "900",
+      letterSpacing: "4px",
+      color: "#1b5e20",
+      marginBottom: "20px",
+      padding: "10px 0",
+      borderTop: "2px solid #4caf50",
+      borderBottom: "2px solid #4caf50",
+      userSelect: "all",
+      backgroundColor: "#e8f5e9",
+      borderRadius: "8px",
+    }}
+  >
+    {couponCode}
+  </div>
+
+  <button
+    onClick={() => {
+      const element = document.createElement("a");
+      const file = new Blob(
+        [
+          `🎉 Congratulations!\n\nHere is your 10% Voucher Code:\n\n${couponCode}\n\nUse it on your next booking with A Fine Trip!`,
+        ],
+        { type: "text/plain" }
+      );
+      element.href = URL.createObjectURL(file);
+      element.download = "afinetrip_voucher.txt";
+      document.body.appendChild(element);
+      element.click();
+      document.body.removeChild(element);
+    }}
+    style={{
+      cursor: "pointer",
+      backgroundColor: "#4caf50",
+      border: "none",
+      color: "white",
+      fontWeight: "bold",
+      padding: "12px 25px",
+      fontSize: "1.1rem",
+      borderRadius: "30px",
+      boxShadow: "0 4px 6px rgba(76,175,80,0.4)",
+      transition: "background-color 0.3s ease",
+    }}
+    onMouseOver={(e) => (e.currentTarget.style.backgroundColor = "#388e3c")}
+    onMouseOut={(e) => (e.currentTarget.style.backgroundColor = "#4caf50")}
+  >
+    Download Voucher
+  </button>
+</div>
+
       ) : (
         <form
           onSubmit={handleSubmit}
