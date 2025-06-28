@@ -51,14 +51,7 @@ const SplashSection = () => {
   };
 
   return (
-<section
-  className="splash-section-bootstrap small-carousel"
-  style={{
-    backgroundImage: `url(${slides[index].background})`,
-    backgroundRepeat: "no-repeat",
-    transition: "background-image 0.5s ease-in-out",
-  }}
->
+<section className="carousel-wrapper">
   <Carousel
     activeIndex={index}
     onSelect={handleSelect}
@@ -68,16 +61,16 @@ const SplashSection = () => {
   >
     {slides.map((slide, idx) => (
       <Carousel.Item key={idx}>
-        <div className="carousel-content-bootstrap">
-          <div className="carousel-animation-bootstrap">
-            <Lottie animationData={soccerball2} loop autoplay />
-          </div>
-         
-        </div>
+        <img
+          src={slide.background}
+          alt={`Slide ${idx}`}
+          className="carousel-image"
+        />
       </Carousel.Item>
     ))}
   </Carousel>
 </section>
+
 
   );
 };

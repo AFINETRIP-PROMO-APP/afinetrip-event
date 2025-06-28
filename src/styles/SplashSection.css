@@ -1,60 +1,14 @@
-.small-carousel {
-  width: 90%;
-  height: 160px;
-  margin: 20px auto;
-  background-size: cover;
-  background-position: center;
-  border-radius: 10px;
+.carousel-wrapper {
+  width: 90vw;
+  margin: 0 auto; /* centers horizontally */
   overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0 16px;
+  border-radius: 10px; /* optional */
+  margin-top: 20px;
 }
 
-.carousel-content-bootstrap {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  height: 100%;
+.carousel-image {
   width: 100%;
-}
-
-.carousel-animation-bootstrap {
-  width: 60px;
-  height: 60px;
-  flex-shrink: 0;
-}
-
-.carousel-text-bootstrap {
-  flex-grow: 1;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-}
-
-.carousel-text-bootstrap h2 {
-  font-size: 1rem;
-  margin: 0;
-  line-height: 1.2;
-}
-
-.carousel-text-bootstrap p {
-  font-size: 0.75rem;
-  margin: 0;
-}
-
-@media (max-width: 768px) {
-  .carousel-text-bootstrap h2 {
-    font-size: 0.9rem;
-  }
-
-  .carousel-text-bootstrap p {
-    font-size: 0.7rem;
-  }
-
-  .carousel-animation-bootstrap {
-    width: 40px;
-    height: 40px;
-  }
+  height: auto;
+  display: block;
+  object-fit: contain; /* ensures full image is shown */
 }
