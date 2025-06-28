@@ -1,49 +1,72 @@
 import React from "react";
 import { jsPDF } from "jspdf";
+import logo from "../assets/logo.png"; // place your logo in the public/src folder
+
 
 const Voucher = ({ couponCode }) => {
   const downloadPDF = () => {
     const pdf = new jsPDF("p", "mm", "a4");
     const pageWidth = pdf.internal.pageSize.getWidth();
 
-    // Title text
-    pdf.setFontSize(24);
-    pdf.setFont("helvetica", "bold");
-    pdf.setTextColor("#2e7d32");
-    pdf.text("Your 10% Voucher Code", pageWidth / 2, 40, { align: "center" });
+    const voucherWidth = 160;
+    const voucherHeight = 100;
+    const voucherX = (pageWidth - voucherWidth) / 2;
+    const voucherY = 50;
 
-    // Draw a subtle shadow rectangle behind the coupon code
-    pdf.setFillColor("#c8e6c9");
-    pdf.roundedRect(pageWidth / 2 - 60, 55, 120, 30, 5, 5, "F");
+    // Create image and wait for it to load
+    const img = new Image();
+    img.src = logo;
+    img.onload = () => {
+      // Shadow behind the voucher
+      pdf.setFillColor("#b2dfdb");
+      pdf.roundedRect(voucherX + 3, voucherY + 3, voucherWidth, voucherHeight, 10, 10, "F");
 
-    // Draw a white rectangle to simulate a card inside shadow
-    pdf.setFillColor("#ffffff");
-    pdf.roundedRect(pageWidth / 2 - 58, 57, 116, 26, 4, 4, "F");
+      // Main white voucher rectangle
+      pdf.setFillColor("#ffffff");
+      pdf.setDrawColor("#00796b");
+      pdf.setLineWidth(1.5);
+      pdf.roundedRect(voucherX, voucherY, voucherWidth, voucherHeight, 10, 10, "FD");
 
-    // Draw border for coupon code
-    pdf.setDrawColor("#4caf50");
-    pdf.setLineWidth(1.2);
-    pdf.roundedRect(pageWidth / 2 - 60, 55, 120, 30, 5, 5, "S");
+      // 👇 Add logo inside the voucher (top center)
+      const logoWidth = 30;
+      const logoHeight = 30;
+      const logoX = pageWidth / 2 - logoWidth / 2;
+      const logoY = voucherY + 8;
+      pdf.addImage(img, "PNG", logoX, logoY, logoWidth, logoHeight);
 
-    // Coupon code text
-    pdf.setFontSize(32);
-    pdf.setFont("helvetica", "bold");
-    pdf.setTextColor("#388e3c");
-    pdf.text(couponCode, pageWidth / 2, 75, { align: "center" });
+      // Title below the logo
+      pdf.setFontSize(16);
+      pdf.setFont("helvetica", "bold");
+      pdf.setTextColor("#004d40");
+      pdf.text("Your 10% Voucher", pageWidth / 2, logoY + logoHeight + 10, { align: "center" });
 
-    // Footer small note
-    pdf.setFontSize(12);
-    pdf.setFont("helvetica", "normal");
-    pdf.setTextColor("#555555");
-    pdf.text(
-      "Thank you for choosing Afinetrip! Use this code at checkout.",
-      pageWidth / 2,
-      100,
-      { align: "center" }
-    );
+      // Coupon Code Box
+      pdf.setFillColor("#e0f2f1");
+      pdf.roundedRect(pageWidth / 2 - 50, voucherY + 50, 100, 25, 6, 6, "F");
+      pdf.setDrawColor("#00796b");
+      pdf.roundedRect(pageWidth / 2 - 50, voucherY + 50, 100, 25, 6, 6, "S");
 
-    pdf.save("afinetrip_voucher.pdf");
+      // Coupon Code Text
+      pdf.setFontSize(22);
+      pdf.setTextColor("#00695c");
+      pdf.text(couponCode, pageWidth / 2, voucherY + 67, { align: "center" });
+
+      // Footer note
+      pdf.setFontSize(12);
+      pdf.setFont("helvetica", "normal");
+      pdf.setTextColor("#555555");
+      pdf.text(
+        "Use this code at checkout on Afinetrip!",
+        pageWidth / 2,
+        voucherY + voucherHeight - 10,
+        { align: "center" }
+      );
+
+      // Save PDF
+      pdf.save("afinetrip_voucher.pdf");
+    };
   };
+
 
   return (
     <button
